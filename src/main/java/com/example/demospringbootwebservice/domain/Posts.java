@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 //@Builder // Setter가 없으니 사용할수가 없었다
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
