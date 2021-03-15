@@ -1,10 +1,12 @@
 package com.example.demospringbootwebservice.config.auth.dto;
 
 import com.example.demospringbootwebservice.domain.User;
+import lombok.Getter;
 
 import java.io.Serializable;
 
 // Serializable을 하기 위해 새로운 SessionUser만들어줌
+@Getter
 public class SessionUser implements Serializable {
     private String name;
     private String email;

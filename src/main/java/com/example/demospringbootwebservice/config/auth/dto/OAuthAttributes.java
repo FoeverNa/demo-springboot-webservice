@@ -36,8 +36,8 @@ public class OAuthAttributes {
                                             Map<String, Object> attributes) {
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
-                .name((String) attributes.get("email"))
-                .name((String) attributes.get("picture"))
+                .email((String) attributes.get("email"))
+                .picture((String) attributes.get("picture"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
