@@ -46,4 +46,11 @@ public class PostService {
                 .collect(Collectors.toList()); // Dto로 변환할때 Stream사용하기
     }
 
+    @Transactional
+    public void delete (Long id) {
+        Posts posts = postRepository.findById(id)
+                .orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다"));
+        //존재하는지 먼저 확인한 후 삭제
+        postRepository.delete(posts);
+    }
 }
