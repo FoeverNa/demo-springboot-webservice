@@ -1,5 +1,6 @@
 package com.example.demospringbootwebservice.controller;
 
+import com.example.demospringbootwebservice.config.auth.LoginUser;
 import com.example.demospringbootwebservice.config.auth.dto.SessionUser;
 import com.example.demospringbootwebservice.dto.PostsResponseDto;
 import com.example.demospringbootwebservice.service.PostService;
@@ -19,10 +20,8 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postService.findAllDesc());
-
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());
