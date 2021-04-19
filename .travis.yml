@@ -18,9 +18,9 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springboot-webserie ./*
+  - zip -r springboot-webservice ./*
   - mkdir -p deploy
-  - mv springboot-webservice.zip deploy/spring-webservice.zip
+  - mv springboot-webservice.zip deploy/springboot-webservice.zip
 
 deploy:
   - provider: s3
@@ -32,7 +32,7 @@ deploy:
     skip_cleanup: true
     acl: private
     local_dir: deploy
-    wait_untill_deployed: true
+    wait_until_deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
