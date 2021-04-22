@@ -9,5 +9,4 @@ public class DemoSpringbootWebserviceApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoSpringbootWebserviceApplication.class, args);
     }
-
 }
